@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Image Resizer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Bulk Image Resizer</h1>
+        <form id="uploadForm" class="mb-4">
+            <div class="form-group">
+                <label for="images">Select Images</label>
+                <input type="file" id="images" name="images" class="form-control-file" multiple>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="width">Width</label>
+                    <input type="number" id="width" name="width" class="form-control" placeholder="Width">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="height">Height</label>
+                    <input type="number" id="height" name="height" class="form-control" placeholder="Height">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="fit">Fit Option</label>
+                <select id="fit" name="fit" class="form-control">
+                    <option value="cover">Cover</option>
+                    <option value="contain">Contain</option>
+                    <option value="fill">Fill</option>
+                    <option value="inside">Inside</option>
+                    <option value="outside">Outside</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="background">Background Color</label>
+                <input type="color" id="background" name="background" class="form-control" value="#ffffff">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Upload and Resize</button>
+        </form>
+        <div id="result" class="d-flex flex-wrap justify-content-center"></div>
+        <button id="downloadButton" class="btn btn-success btn-block mt-4" style="display:none;">Download Images</button>
+    </div>
+    <footer class="mt-5 p-4 bg-dark text-light">
+        <div class="container">
+            <h2>About Bulk Image Resizer</h2>
+            <p>
+                Bulk Image Resizer is a powerful tool designed to help you resize multiple images at once.
+                This application allows you to upload multiple images, specify the desired width and height,
+                choose a fit option (cover, contain, fill, inside, or outside), and set a background color.
+                Once you upload your images and specify the options, our tool processes each image using
+                high-quality settings to ensure the best output. The resized images are then made available
+                for download in a compressed zip file.
+            </p>
+            <h3>How It Works</h3>
+            <p>
+                The tool leverages the power of Node.js and the Sharp library for image processing.
+                When you upload images, they are sent to our server, where each image is resized according
+                to your specifications. The processed images are stored temporarily and packaged into a zip file
+                for easy download.
+            </p>
+            <h3>Use Cases</h3>
+            <p>
+                Bulk Image Resizer is ideal for various scenarios, including:
+                <ul>
+                    <li>Preparing images for a website, ensuring they fit within specific dimensions.</li>
+                    <li>Batch processing images for presentations or documents.</li>
+                    <li>Resizing images for social media, maintaining a consistent appearance across platforms.</li>
+                    <li>Creating thumbnails for videos or articles.</li>
+                </ul>
+                Our tool simplifies the process of resizing images, saving you time and effort while delivering
+                high-quality results.
+            </p>
+            <h3>Disclaimer</h3>
+            <p>
+                Bulk Image Resizer does not store your images permanently. All uploaded images and processed files
+                are automatically deleted from our server after 1 hour. We respect your privacy and ensure that
+                your images are handled securely during processing.
+            </p>
+            <h3>Auto Clean File Policy</h3>
+            <p>
+                To maintain server performance and security, Bulk Image Resizer automatically cleans up old files.
+                Any files or folders older than 1 hour are deleted every minute. This ensures that our server remains
+                efficient and that your images are not stored longer than necessary.
+            </p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
