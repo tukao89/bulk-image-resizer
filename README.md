@@ -12,3 +12,5 @@ Bulk Image Resizer is ideal for various scenarios, including:
 - Creating thumbnails for videos or articles.
 
 **Try online:** https://codehelpers.io/tool/bulk-image-resizer
+
+<img width="500" alt="bulk-image-resizer" src="https://github.com/user-attachments/assets/1378cdfe-987d-40fe-a042-f567b123e10d">
